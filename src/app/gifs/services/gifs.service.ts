@@ -22,7 +22,9 @@ export class GifsService {
     if(localStorage.getItem('historial')) {
       this._historial = JSON.parse(localStorage.getItem('historial')!);
     }
-    if(this._historial == []) {
+    console.log(this._historial);
+    
+    if(this._historial[0] == undefined) {
       this.buscarGifs("sexo")
     } else {
       this.buscarGifs(this._historial[0])
